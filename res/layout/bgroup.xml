@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/p" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Donating Blood By Compatible Type"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:typeface="serif" />
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp" >
+
+            <TableRow
+                android:id="@+id/tableRow1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="BloodType"
+                    android:textStyle="bold"
+                    android:typeface="serif" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="Donate Blood To"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="Receive Blood From"
+                    android:textStyle="bold" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp" >
+
+                 <TextView
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_weight="1"
+                     android:text="A+"
+                     android:typeface="serif" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="A+,AB+" 
+                    android:layout_weight="2"
+                    android:typeface="serif" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="A+,A_,O+,O-" 
+                    android:layout_weight="2"
+                    android:typeface="serif" 
+                    />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp" >
+
+                                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="O+" 
+                    android:layout_weight="1"
+                    android:typeface="serif" 
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="O+,A+,B+,AB+" 
+                    android:layout_weight="2"
+                    android:typeface="serif" 
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="O+,O-" 
+                    android:layout_weight="2"
+                    android:typeface="serif" 
+                    />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp" >
+
+                                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="B+" 
+                    android:layout_weight="1"
+                    android:typeface="serif" 
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="B+,AB+" 
+                    android:layout_weight="2"
+                    android:typeface="serif" 
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="B+,B-,O+,O-" 
+                    android:layout_weight="2"
+                    android:typeface="serif" 
+                    />
+            </TableRow>
+
+                        <TableRow
+                            android:id="@+id/tableRow5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp" >
+
+                                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="AB+" 
+                    android:layout_weight="1"
+                    android:typeface="serif" 
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="AB+" 
+                    android:layout_weight="2"
+                    android:typeface="serif" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Everyone" 
+                    android:layout_weight="2"
+                    android:typeface="serif" 
+                    />
+            </TableRow>
+
+                        <TableRow
+                            android:id="@+id/tableRow6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp" >
+
+                                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="A-" 
+                    android:layout_weight="1"
+                    android:typeface="serif" 
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="A+,A-,AB+,AB-" 
+                    android:layout_weight="2"
+                    android:typeface="serif" 
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="A-,O-" 
+                    android:layout_weight="2"
+                    android:typeface="serif" 
+                    />
+            </TableRow>
+
+                        <TableRow
+                            android:id="@+id/tableRow7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp" >
+
+                                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="O-" 
+                    android:layout_weight="1"
+                    android:typeface="serif" 
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Everyone" 
+                    android:layout_weight="2"
+                    android:typeface="serif" 
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="O-" 
+                    android:layout_weight="2"
+                    android:typeface="serif" 
+                    />
+            </TableRow>
+
+                        <TableRow
+                            android:id="@+id/tableRow8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp" >
+
+                                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="B-" 
+                    android:layout_weight="1"
+                    android:typeface="serif" 
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="B+,AB+,B-,AB-" 
+                    android:layout_weight="2"
+                    android:typeface="serif" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="B-,O-" 
+                    android:layout_weight="2"
+                    android:typeface="serif" 
+                    />
+            </TableRow>
+                        <TableRow
+                android:id="@+id/tableRow9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+                                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="AB-" 
+                    android:layout_weight="1"
+                    android:typeface="serif" 
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="AB-,AB+" 
+                    android:layout_weight="2"
+                    android:typeface="serif" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="B-,A-,AB-,O-" 
+                    android:layout_weight="2"
+                    android:typeface="serif" 
+                    />
+            </TableRow>
+
+        </TableLayout>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:text="Why You Will Give Blood--"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:typeface="serif"
+             />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="20dp"
+            android:text="This is because of blood cells regular productivity.You make millions of blood cells every day.Each type of cell has an expected lifespan.For Example red blood cells normally last about 120 days or 3 months.Some white blood cells last just hours or days-some last longer.Every day millions of blood cells die and are broken down.So A Healthy man can donate blood after every 3 months.\n Again just think,Your donating blood can save one&apos;s live who can be a childor a mother or simply a man"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="Are You Capable of Giving Blood???"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textSize="17sp"
+            android:typeface="serif" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="20dp"
+            android:gravity="left"
+            android:text="You must meet all the following criteria in order to donate Blood \n a.Be at least 17 years old(16 year olds may donate with parental)\nb.Weight at least 110lbs or 50 kilograms(body Weight)\nc.Generally feel well and healthy \n d.Have no fever ,sore throat,or flu-like symptoms\n e.Have no active cold symptoms \n f.Have not had major surgery recently."
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:typeface="sans" />
+        
+    </LinearLayout>
+    
+
+</ScrollView>
