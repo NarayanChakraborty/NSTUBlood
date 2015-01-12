@@ -45,7 +45,7 @@ public class Account extends Activity implements OnClickListener{
 	     edit.setOnClickListener(this);
 	     del.setOnClickListener(this);
 	     info.setOnClickListener(this);
-		
+	     
 		dbhelper=DatabaseHelper.getInstance(getApplicationContext());
 	}
 	@Override
@@ -63,26 +63,32 @@ public class Account extends Activity implements OnClickListener{
 				String sDept=dept.getText().toString();
 				String sGroup=group.getText().toString();
 				String sMobile=mob.getText().toString();
-				
-				
-				Student student=new Student(sName,sBatch,sDept,sMobile,sGroup);
-				Toast.makeText(getApplicationContext(),student.toString(),Toast.LENGTH_LONG).show();
-				
-				long inserted=dbhelper.insertStudent(student); 
-				if(inserted>=0)
-				{
-					Toast.makeText(getApplicationContext(), "Login SuccessFull",Toast.LENGTH_LONG).show();
-					//Student s=new Student(" "," "," "," "," ");
-				}
+				if(sName.equals("")||sBatch.equals("")||sGroup.equals("")||sDept.equals(""))
+			     {
+			                Toast.makeText(getApplicationContext(), "You Cannot leave any field Blank Except Mobile Number", Toast.LENGTH_LONG).show();
+			                return;
+			     }
 				else
 				{
-					Toast.makeText(getApplicationContext(), "Login UnSuccessFull",Toast.LENGTH_LONG).show();
-					//Student s=new Student(" "," "," "," "," ");
-				}
-				break;
+					Student student=new Student(sName,sBatch,sDept,sMobile,sGroup);
+					Toast.makeText(getApplicationContext(),student.getString(),Toast.LENGTH_LONG).show();
+					long inserted=dbhelper.insertStudent(student); 
+					if(inserted>=0)
+					{
+						Toast.makeText(getApplicationContext(), "Login SuccessFull",Toast.LENGTH_LONG).show();
+						//Student s=new Student(" "," "," "," "," ");
+					}
+					else
+					{
+						Toast.makeText(getApplicationContext(), "Login UnSuccessFull",Toast.LENGTH_LONG).show();
+						//Student s=new Student(" "," "," "," "," ");
+					}
+					break;
+					}
 				}
 			case R.id.view:
 			{
+				
 				ArrayList<Student> sd=dbhelper.getAllInformation();
 			     if(sd!=null && sd.size()>0)
 			     {
@@ -90,7 +96,8 @@ public class Account extends Activity implements OnClickListener{
 			    	 {
 			    		 Toast.makeText(getApplicationContext(), sm.toString(),Toast.LENGTH_SHORT).show();
 			    	 }
-			    }  else if(sd.size()==0)
+			    } 
+				  else if(sd.size()==0)
 			     {
 			    	 Toast.makeText(getApplicationContext(), "No Data Found", Toast.LENGTH_SHORT).show();
 			     }

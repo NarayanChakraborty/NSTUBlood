@@ -57,114 +57,117 @@ public class Marry extends Activity implements OnClickListener{
 		{
 			s1=et1.getText().toString();
 			s2=et2.getText().toString();
-			if(sex==1)
+			if(s1.equals("")||s2.equals("")||a.equals("")||b.equals(""))
 			{
-				if(s1.equals("+")&&(s2.equals("-")) )
-				{
-					// get your custom_toast.xml ayout
-					LayoutInflater inflater = getLayoutInflater();
-	 
-					View layout = inflater.inflate(R.layout.toast,
-					  (ViewGroup) findViewById(R.id.toastLayout));
-	 
-					// set a dummy image
-					ImageView image = (ImageView) layout.findViewById(R.id.image);
-					image.setImageResource(R.drawable.sorry);
-	 
-					// set a message
-					TextView text = (TextView) layout.findViewById(R.id.text);
-					text.setText("Hey "+a+"Your Marriage with "+b+" is Incompitable");
-	 
-					// Toast...
-					Toast toast = new Toast(getApplicationContext());
-					toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
-					toast.setDuration(Toast.LENGTH_LONG);
-					toast.setView(layout);
-					toast.show();
-					}
-				else if(s1.equals(" ")||s2.equals(" "))
-				{
-					Toast.makeText(getApplicationContext(),"Insert Rh factor Field",Toast.LENGTH_LONG).show();
-				}
-				else
-				{
-
-					LayoutInflater inflater = getLayoutInflater();
-					 
-					View layout = inflater.inflate(R.layout.toast,
-					  (ViewGroup) findViewById(R.id.toastLayout));
-	 
-					// set a dummy image
-					ImageView image = (ImageView) layout.findViewById(R.id.image);
-					image.setImageResource(R.drawable.happy);
-	 
-					// set a message
-					TextView text = (TextView) layout.findViewById(R.id.text);
-					text.setText("Hey "+a+"Your Marriage with "+b+" is compitable");
-	 
-					// Toast...
-					Toast toast = new Toast(getApplicationContext());
-					toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
-					toast.setDuration(Toast.LENGTH_LONG);
-					toast.setView(layout);
-					toast.show();	
-				}
-			}
-			else
-			{
-				if(s2.equals("+")&&(s1.equals("-")) )
-				{
-					LayoutInflater inflater = getLayoutInflater();
-					 
-					View layout = inflater.inflate(R.layout.toast,
-					  (ViewGroup) findViewById(R.id.toastLayout));
-	 
-					// set a dummy image
-					ImageView image = (ImageView) layout.findViewById(R.id.image);
-					image.setImageResource(R.drawable.sorry);
-	 
-					// set a message
-					TextView text = (TextView) layout.findViewById(R.id.text);
-					text.setText("Hey "+a+"Your Marriage with "+b+" is Incompitable");
-	 
-					// Toast...
-					Toast toast = new Toast(getApplicationContext());
-					toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
-					toast.setDuration(Toast.LENGTH_LONG);
-					toast.setView(layout);
-					toast.show();	
-				}
-				else if(s1.equals(" ")||s2.equals(" "))
-				{
-					Toast.makeText(getApplicationContext(),"Insert Rh factor Field",Toast.LENGTH_LONG).show();
-				}
-				else
-				{
-					LayoutInflater inflater = getLayoutInflater();
-					 
-					View layout = inflater.inflate(R.layout.toast,
-					  (ViewGroup) findViewById(R.id.toastLayout));
-	 
-					// set a dummy image
-					ImageView image = (ImageView) layout.findViewById(R.id.image);
-					image.setImageResource(R.drawable.happy);
-	 
-					// set a message
-					TextView text = (TextView) layout.findViewById(R.id.text);
-					text.setText("Hey "+a+"Your Marriage with "+b+" is compitable");
-	 
-					// Toast...
-					Toast toast = new Toast(getApplicationContext());
-					toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
-					toast.setDuration(Toast.LENGTH_LONG);
-					toast.setView(layout);
-					toast.show();	
-				}
-
-			}
 				
-			
-		}
+		          Toast.makeText(getApplicationContext(), "Please ensure that you have filled up all the field", Toast.LENGTH_LONG).show();
+	                return;
+			}
+			else{
+						
+					if(sex==1)
+					{
+						if(s1.equals("+")&&(s2.equals("-")) )
+						{
+									// get your custom_toast.xml ayout
+									LayoutInflater inflater = getLayoutInflater();
+					 
+									View layout = inflater.inflate(R.layout.toast,
+									  (ViewGroup) findViewById(R.id.toastLayout));
+					 
+									// set a dummy image
+									ImageView image = (ImageView) layout.findViewById(R.id.image);
+									image.setImageResource(R.drawable.sorry);
+					 
+									// set a message
+									TextView text = (TextView) layout.findViewById(R.id.text);
+									text.setText("Hey "+a+"Your Marriage with "+b+" is Incompitable");
+					 
+									// Toast...
+									Toast toast = new Toast(getApplicationContext());
+									toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
+									toast.setDuration(Toast.LENGTH_LONG);
+									toast.setView(layout);
+									toast.show();
+									}
+								else if(s1.equals("")||s2.equals(""))
+								{
+									Toast.makeText(getApplicationContext(),"Insert Rh factor Field",Toast.LENGTH_LONG).show();
+								}
+								else
+								{
+				
+									LayoutInflater inflater = getLayoutInflater();
+									 
+									View layout = inflater.inflate(R.layout.toast,
+									  (ViewGroup) findViewById(R.id.toastLayout));
+					 
+									// set a dummy image
+									ImageView image = (ImageView) layout.findViewById(R.id.image);
+									image.setImageResource(R.drawable.happy);
+					 
+									// set a message
+									TextView text = (TextView) layout.findViewById(R.id.text);
+									text.setText("Hey "+a+"Your Marriage with "+b+" is compitable");
+					 
+									// Toast...
+									Toast toast = new Toast(getApplicationContext());
+									toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
+									toast.setDuration(Toast.LENGTH_LONG);
+									toast.setView(layout);
+									toast.show();	
+								}
+							}
+							else
+							{
+								if(s2.equals("+")&&(s1.equals("-")) )
+								{
+									LayoutInflater inflater = getLayoutInflater();
+									 
+									View layout = inflater.inflate(R.layout.toast,
+									  (ViewGroup) findViewById(R.id.toastLayout));
+					 
+									// set a dummy image
+									ImageView image = (ImageView) layout.findViewById(R.id.image);
+									image.setImageResource(R.drawable.sorry);
+					 
+									// set a message
+									TextView text = (TextView) layout.findViewById(R.id.text);
+									text.setText("Hey "+a+"Your Marriage with "+b+" is Incompitable");
+					 
+									// Toast...
+									Toast toast = new Toast(getApplicationContext());
+									toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
+									toast.setDuration(Toast.LENGTH_LONG);
+									toast.setView(layout);
+									toast.show();	
+								}
+								else
+								{
+									LayoutInflater inflater = getLayoutInflater();
+									 
+									View layout = inflater.inflate(R.layout.toast,
+									  (ViewGroup) findViewById(R.id.toastLayout));
+					 
+									// set a dummy image
+									ImageView image = (ImageView) layout.findViewById(R.id.image);
+									image.setImageResource(R.drawable.happy);
+					 
+									// set a message
+									TextView text = (TextView) layout.findViewById(R.id.text);
+									text.setText("Hey "+a+"Your Marriage with "+b+" is compitable");
+					 
+									// Toast...
+									Toast toast = new Toast(getApplicationContext());
+									toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
+									toast.setDuration(Toast.LENGTH_LONG);
+									toast.setView(layout);
+									toast.show();	
+								}
+				
+							}
+		      }
 		}
 	}
+}
 }
