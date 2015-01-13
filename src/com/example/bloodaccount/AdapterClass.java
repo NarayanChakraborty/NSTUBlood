@@ -40,14 +40,16 @@ public class AdapterClass extends ArrayAdapter<Student>{
 			TextView tvGroup=(TextView) v.findViewById(R.id.txtGroup);
 			
 			Student sdt=studentlist.get(position);
+			//tvName.setText(sdt.getId());
 			tvName.setText(sdt.getName());
 			tvBatch.setText(sdt.getBatch());
 			tvDept.setText(sdt.getDept());
 			tvGroup.setText(sdt.getBgroup());
 			tvMob.setText(sdt.getMobile());
 		}
-		else
+		else{
 			v=convertView;
+		}
 		return v;
 	}
 

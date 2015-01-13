@@ -21,7 +21,7 @@ public class DatabaseHelper extends SQLiteOpenHelper{
 	public static final String KEY_GROUP="blood_group";
 	public static final String KEY_MOBILE="mob_number";
 	
-	private static final String DATABASE_NAME="studentbloodinfo";
+	private static final String DATABASE_NAME="studentbloodAccount";
 	private static final String DATABASE_TABLE="studentTable";
 	private static final int DATABASE_VERSION=1;
 	private DatabaseHelper(Context context) {
@@ -41,7 +41,7 @@ public class DatabaseHelper extends SQLiteOpenHelper{
 	public void onCreate(SQLiteDatabase db) {
 		// TODO Auto-generated method stub
 		db.execSQL("CREATE TABLE "+DATABASE_TABLE+" (" +
-	              KEY_ROWID+" INTEGER PRIMARY KEY AUTOINCREMENT, " +
+	              KEY_ROWID+" INTEGER PRIMARY kEY, " +
 				  KEY_NAME+" TEXT NOT NULL, " + 
 	              KEY_BATCH+" TEXT NOT NULL, " +
 	              KEY_DEPT+" TEXT NOT NULL, " + 
@@ -109,7 +109,6 @@ public class DatabaseHelper extends SQLiteOpenHelper{
 			c.moveToFirst();
 		for(int i=0;i<c.getCount();i++)
 		{
-			
 			int irow=c.getInt(c.getColumnIndex(KEY_ROWID));
 			String iName=c.getString(c.getColumnIndex(KEY_NAME));
 			String iBatch=c.getString(c.getColumnIndex(KEY_BATCH));
@@ -119,7 +118,7 @@ public class DatabaseHelper extends SQLiteOpenHelper{
 			Student s=new Student(irow,iName,iBatch,iDept,iMob,iGroup);
 			allinformation.add(s);
 			c.moveToNext();
-		}	
+		  }	
 		}
 		c.close();
 		db.close();
@@ -219,4 +218,5 @@ public class DatabaseHelper extends SQLiteOpenHelper{
 		SQLiteDatabase OurDatabase=this.getReadableDatabase();
 		OurDatabase.delete(DATABASE_TABLE, KEY_ROWID+"="+dlng,null);
 	}
+
 }
