@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.example.nstu_bloodaccount.R;
@@ -20,7 +21,8 @@ public class Marry extends Activity implements OnClickListener{
 
 	EditText et1,et2,name1,name2;
 	ImageButton imb;
-	RadioButton rb1,rb2;
+	RadioGroup radioGroup;
+	public static int m;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -30,29 +32,19 @@ public class Marry extends Activity implements OnClickListener{
 		et2=(EditText) findViewById(R.id.rh2);
 		name1=(EditText) findViewById(R.id.one);
 		name2=(EditText) findViewById(R.id.two);
-		rb1=(RadioButton) findViewById(R.id.radio0);
-		rb2=(RadioButton) findViewById(R.id.radio1);
+		radioGroup= (RadioGroup) findViewById(R.id.radioGroup1);
 		imb=(ImageButton) findViewById(R.id.imageButton1);
-		rb1.setOnClickListener(this);
-		rb2.setOnClickListener(this);
 		imb.setOnClickListener(this);
 	    
 	}
 	@Override
 	public void onClick(View arg0) {
 		// TODO Auto-generated method stub
-		String s1="+";String s2="-";
+		String s1,s2;
 		String a=name1.getText().toString();
 		String b=name2.getText().toString();
-		int sex=1;
 		switch(arg0.getId())
 		{
-		 case R.id.radio0:
-			 sex=1;
-			 break;
-		case R.id.radio1:
-				sex=0;
-				break;
 		case R.id.imageButton1:
 		{
 			s1=et1.getText().toString();
@@ -64,10 +56,12 @@ public class Marry extends Activity implements OnClickListener{
 	                return;
 			}
 			else{
-						
-					if(sex==1)
-					{
-						if(s1.equals("+")&&(s2.equals("-")) )
+				 int checkedRadioButton = radioGroup.getCheckedRadioButtonId();;
+				switch(checkedRadioButton)
+				{
+				case R.id.radio0:
+				{	
+					if(s1.equals("+")&&(s2.equals("-")) )
 						{
 									// get your custom_toast.xml ayout
 									LayoutInflater inflater = getLayoutInflater();
@@ -81,7 +75,7 @@ public class Marry extends Activity implements OnClickListener{
 					 
 									// set a message
 									TextView text = (TextView) layout.findViewById(R.id.text);
-									text.setText("Hey "+a+"Your Marriage with "+b+" is Incompitable");
+									text.setText("Hey "+a+"Your Marriage \nwith "+b+" is Incompitable");
 					 
 									// Toast...
 									Toast toast = new Toast(getApplicationContext());
@@ -90,10 +84,6 @@ public class Marry extends Activity implements OnClickListener{
 									toast.setView(layout);
 									toast.show();
 									}
-								else if(s1.equals("")||s2.equals(""))
-								{
-									Toast.makeText(getApplicationContext(),"Insert Rh factor Field",Toast.LENGTH_LONG).show();
-								}
 								else
 								{
 				
@@ -108,7 +98,7 @@ public class Marry extends Activity implements OnClickListener{
 					 
 									// set a message
 									TextView text = (TextView) layout.findViewById(R.id.text);
-									text.setText("Hey "+a+"Your Marriage with "+b+" is compitable");
+									text.setText("Hey "+a+"Your Marriage \nwith "+b+" is compitable");
 					 
 									// Toast...
 									Toast toast = new Toast(getApplicationContext());
@@ -117,9 +107,11 @@ public class Marry extends Activity implements OnClickListener{
 									toast.setView(layout);
 									toast.show();	
 								}
+					break;
 							}
-							else
-							{
+						
+				   case  R.id.radio1:
+				   {
 								if(s2.equals("+")&&(s1.equals("-")) )
 								{
 									LayoutInflater inflater = getLayoutInflater();
@@ -133,7 +125,7 @@ public class Marry extends Activity implements OnClickListener{
 					 
 									// set a message
 									TextView text = (TextView) layout.findViewById(R.id.text);
-									text.setText("Hey "+a+"Your Marriage with "+b+" is Incompitable");
+									text.setText("Hey  "+a+"Your Marriage \nwith "+b+" is Incompitable");
 					 
 									// Toast...
 									Toast toast = new Toast(getApplicationContext());
@@ -155,7 +147,7 @@ public class Marry extends Activity implements OnClickListener{
 					 
 									// set a message
 									TextView text = (TextView) layout.findViewById(R.id.text);
-									text.setText("Hey "+a+"Your Marriage with "+b+" is compitable");
+									text.setText("Hey "+a+"Your Marriage \nwith "+b+" is compitable");
 					 
 									// Toast...
 									Toast toast = new Toast(getApplicationContext());
@@ -164,10 +156,13 @@ public class Marry extends Activity implements OnClickListener{
 									toast.setView(layout);
 									toast.show();	
 								}
+								break;
 				
 							}
+					
 		      }
 		}
 	}
+}
 }
 }
