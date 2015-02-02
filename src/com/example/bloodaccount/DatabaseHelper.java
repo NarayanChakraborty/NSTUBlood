@@ -65,7 +65,7 @@ public class DatabaseHelper extends SQLiteOpenHelper{
 		values.put(KEY_DEPT,s.getDept());
 		values.put(KEY_GROUP,s.getBgroup());
 		values.put(KEY_MOBILE,s.getMobile());
-		long inserted=db.insertOrThrow(DATABASE_TABLE,null, values);
+		long inserted=db.insert(DATABASE_TABLE,null, values);
 		db.close();
 		return inserted;
 	}
@@ -73,27 +73,25 @@ public class DatabaseHelper extends SQLiteOpenHelper{
 	{
 		ArrayList<Student> std=new ArrayList<Student>();
 		SQLiteDatabase db=this.getReadableDatabase();
-		//Cursor cr=db.query(DATABASE_TABLE, null,KEY_GROUP +" LIKE '%"+ KeyWord +"%'",null,null,null,null);
-		Cursor cr=db.rawQuery(
-				"select * from studentTable where blood_group LIKE '%"+ keyword + "%';"
-				, null);
+		Cursor cr=db.query(DATABASE_TABLE, null,"blood_group LIKE '%"+keyword+"%'",null,null,null,null);
+		//Cursor cr=db.rawQuery("select * from studentTable where blood_group LIKE '%"+ keyword + "%';", null);
 						
 		if(cr!=null && cr.getCount()>0)
 		{
-		cr.moveToFirst();
-		for(int i=0;i<cr.getCount();i++)
-		  {
-			
-				int irow=cr.getInt(cr.getColumnIndex(KEY_ROWID));
-				String iName=cr.getString(cr.getColumnIndex(KEY_NAME));
-				String iBatch=cr.getString(cr.getColumnIndex(KEY_BATCH));
-				String iDept=cr.getString(cr.getColumnIndex(KEY_DEPT));
-				String iGroup=cr.getString(cr.getColumnIndex(KEY_GROUP));
-				String iMob=cr.getString(cr.getColumnIndex(KEY_MOBILE));
-				Student s=new Student(irow,iName,iBatch,iDept,iMob,iGroup);
-			    std.add(s);
-				cr.moveToNext();
-		   }	
+			cr.moveToFirst();
+			for(int i=0;i<cr.getCount();i++)
+			  {
+				
+					int irow=cr.getInt(cr.getColumnIndex(KEY_ROWID));
+					String iName=cr.getString(cr.getColumnIndex(KEY_NAME));
+					String iBatch=cr.getString(cr.getColumnIndex(KEY_BATCH));
+					String iDept=cr.getString(cr.getColumnIndex(KEY_DEPT));
+					String iGroup=cr.getString(cr.getColumnIndex(KEY_GROUP));
+					String iMob=cr.getString(cr.getColumnIndex(KEY_MOBILE));
+					Student s=new Student(irow,iName,iBatch,iDept,iMob,iGroup);
+				    std.add(s);
+					cr.moveToNext();
+			   }	
 		}
 		cr.close();
 		db.close();
