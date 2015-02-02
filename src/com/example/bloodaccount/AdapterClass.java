@@ -17,7 +17,8 @@ public class AdapterClass extends ArrayAdapter<Student>{
 
 	Activity con;
 	ArrayList<Student> studentlist;
-	public AdapterClass(Context context,ArrayList<Student> objects) {
+	public AdapterClass(Context context,
+			ArrayList<Student> objects) {
 		super(context,R.layout.listiteam, objects);
 		// TODO Auto-generated constructor stub
 		this.con=(Activity)context;
@@ -26,46 +27,31 @@ public class AdapterClass extends ArrayAdapter<Student>{
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		// TODO Auto-generated method stub
-		View v=convertView;
-		ViewHolder holder=new ViewHolder();
+		View v=null;
 		if(convertView==null)
 		{
 			LayoutInflater inflator=con.getLayoutInflater();
-			v=inflator.inflate(R.layout.listiteam,parent,false);
-			v.setLongClickable(true);
-			holder.tvName=(TextView) v.findViewById(R.id.txtName);
-			holder.tvBatch=(TextView) v.findViewById(R.id.txtBatch);
-			holder.tvDept=(TextView) v.findViewById(R.id.txtDept);
-			holder.tvMob=(TextView) v.findViewById(R.id.txtMobile);
-			holder.tvGroup=(TextView) v.findViewById(R.id.txtGroup);
+			v=inflator.inflate(R.layout.listiteam, null);
 			
-			v.setTag(holder);
-		}
-		else{
-				holder=(ViewHolder) v.getTag();
-			}
+			TextView tvName=(TextView) v.findViewById(R.id.txtName);
+			TextView tvBatch=(TextView) v.findViewById(R.id.txtBatch);
+			TextView tvDept=(TextView) v.findViewById(R.id.txtDept);
+			TextView tvMob=(TextView) v.findViewById(R.id.txtMobile);
+			TextView tvGroup=(TextView) v.findViewById(R.id.txtGroup);
+			
 			Student sdt=studentlist.get(position);
 			//tvName.setText(sdt.getId());
-			if(sdt!=null)
-			{
-			holder.tvName.setText(sdt.getName());
-			holder.tvBatch.setText(sdt.getBatch()+",");
-			holder.tvDept.setText(sdt.getDept());
-			holder.tvMob.setText(sdt.getMobile());
-			holder.tvGroup.setText(sdt.getBgroup());
-		
+			tvName.setText(sdt.getName());
+			tvBatch.setText(sdt.getBatch());
+			tvDept.setText(sdt.getDept());
+			tvGroup.setText(sdt.getBgroup());
+			tvMob.setText(sdt.getMobile());
 		}
-		
+		else{
+			v=convertView;
+		}
 		return v;
 	}
-	private static class ViewHolder
-	{
-		TextView tvName;
-		TextView tvBatch;
-		TextView tvDept;
-		TextView tvMob;
-		TextView tvGroup;
-	}
+
+	
 }
-
-
