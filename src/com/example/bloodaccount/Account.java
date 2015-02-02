@@ -94,12 +94,12 @@ public class Account extends Activity implements OnClickListener{
 			     {
 			    	 for(Student sm:sd)
 			    	 {
-			    		 Toast.makeText(getApplicationContext(), sm.toString(),Toast.LENGTH_SHORT).show();
+			    		 Toast.makeText(getApplicationContext(), sm.toString(),Toast.LENGTH_LONG).show();
 			    	 }
 			    } 
 				  else if(sd.size()==0)
 			     {
-			    	 Toast.makeText(getApplicationContext(), "No Data Found", Toast.LENGTH_SHORT).show();
+			    	 Toast.makeText(getApplicationContext(), "No Data Found", Toast.LENGTH_LONG).show();
 			     }
 			  
 				break;

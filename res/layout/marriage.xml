@@ -1,21 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/scrollView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/one"
+        android:layout_alignParentTop="true" >
+       
+<RelativeLayout
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="460dp"
     android:animateLayoutChanges="true"
     android:background="@drawable/p"
     android:clipChildren="true"
-    android:gravity="center"
     android:orientation="vertical" >
 
     <TextView
         android:id="@+id/textView1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
         android:layout_marginLeft="5dp"
         android:layout_marginTop="20dp"
-        android:text="Enter Your Name"
-        android:textSize="18sp" />
+        android:text="*Enter Your Name"
+        android:textSize="20sp" />
 
     <EditText
         android:id="@+id/one"
@@ -25,10 +32,10 @@
         android:layout_below="@+id/textView1"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:background="#ffffff"
+        android:background="#ddffff"
         android:ems="10"
-        android:textColor="#ff9900"
-        android:hint="Your Name,Must" >
+        android:hint="My Name"
+        android:textColor="#ff9900" >
 
         <requestFocus />
     </EditText>
@@ -39,9 +46,11 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/one"
+        android:layout_marginBottom="5dp"
         android:layout_marginLeft="10dp"
-        android:text="What is Your Sex??"
-        android:textSize="18sp" />
+        android:layout_marginTop="5dp"
+        android:text="*What is Your Sex??"
+        android:textSize="20sp" />
 
     <EditText
         android:id="@+id/rh1"
@@ -53,37 +62,34 @@
         android:layout_alignRight="@+id/rh2"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="10dp"
-        android:background="#ffffff"
+        android:background="#ddffff"
         android:ems="10"
-        android:textColor="#ff9900"
-        android:hint="+/-,Must" />
+        android:hint="+/-"
+        android:textColor="#ff9900" />
 
     <EditText
         android:id="@+id/rh2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/textView4"
-        android:layout_alignLeft="@+id/imageButton1"
-        android:layout_alignParentRight="true"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="20dp"
-        android:background="#ffffff"
+        android:layout_alignRight="@+id/two"
+        android:layout_marginRight="10dp"
+        android:layout_toRightOf="@+id/textView4"
+        android:background="#ddffff"
         android:ems="10"
-        android:textColor="#ff9900" 
-        android:hint="+/-,Must"/>
+        android:hint="+/-"
+        android:textColor="#ff9900" />
 
     <RadioGroup
         android:id="@+id/radioGroup1"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/imageButton1"
+        android:layout_height="match_parent"
         android:layout_below="@+id/textView2"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="42dp" >
+        android:layout_marginLeft="10dp" >
 
         <RadioButton
             android:id="@+id/radio0"
-            android:layout_width="wrap_content"
+            android:layout_width="106dp"
             android:layout_height="wrap_content"
             android:checked="true"
             android:text="Male" />
@@ -102,9 +108,10 @@
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/radioGroup1"
         android:layout_marginLeft="10dp"
+        android:layout_marginRight="5dp"
         android:layout_marginTop="19dp"
         android:hint="+"
-        android:text="RhFactor(+/-)"
+        android:text="*RhFactor(+/-)"
         android:textSize="18sp" />
 
     <TextView
@@ -113,9 +120,10 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/rh1"
+        android:layout_marginBottom="5dp"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="17dp"
-        android:text="Enter Your Partner Name"
+        android:text="*Enter Your Partner Name"
         android:textSize="18sp" />
 
     <EditText
@@ -124,12 +132,13 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/textView3"
+        android:layout_marginBottom="5dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:background="#ffffff"
+        android:background="#ddffff"
         android:ems="10"
-        android:textColor="#ff9900" 
-        android:hint="Your Would be Partner Name"/>
+        android:hint="My Would be Partner Name"
+        android:textColor="#ff9900" />
 
     <TextView
         android:id="@+id/textView4"
@@ -138,18 +147,20 @@
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/two"
         android:layout_marginLeft="10dp"
+        android:layout_marginRight="5dp"
         android:layout_marginTop="19dp"
         android:hint="-"
-        android:text="RhFactor(+/-)"
+        android:text="*RhFactor(+/-)"
         android:textSize="18sp" />
 
     <ImageButton
         android:id="@+id/imageButton1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="14dp"
-        android:layout_toRightOf="@+id/textView4"
+        android:layout_below="@+id/rh2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="43dp"
         android:src="@drawable/marriage" />
 
 </RelativeLayout>
+   </ScrollView>

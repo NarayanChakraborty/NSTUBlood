@@ -27,7 +27,7 @@
         android:layout_toRightOf="@+id/vmobile"
         android:background="#ddffff"
         android:ems="10"
-        android:hint="Mobile,Optional"
+        android:hint="Mobile"
         android:textColor="#FF9900" />
 
     <EditText
@@ -43,7 +43,7 @@
         android:layout_toRightOf="@+id/vgroup"
         android:background="#ddffff"
         android:ems="10"
-        android:hint="Group,Must"
+        android:hint="Group"
         android:textColor="#FF9900" >
     </EditText>
 
@@ -56,7 +56,7 @@
         android:layout_marginBottom="5dp"
         android:layout_marginLeft="5dp"
         android:layout_marginTop="20dp"
-        android:text="Name:"
+        android:text="*Name:"
         android:textColor="#44eeff"
         android:textSize="18sp"
         android:typeface="monospace" />
@@ -97,7 +97,7 @@
         android:layout_alignLeft="@+id/vname"
         android:layout_below="@+id/linearLayout1"
         android:layout_marginTop="10dp"
-        android:text="Blood Group:"
+        android:text="*Blood Group:"
         android:textColor="#44eeff"
         android:textSize="18sp"
         android:typeface="monospace" />
@@ -128,17 +128,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
-            android:layout_weight="0.32"
-            android:text="Batch:"
+            android:text="*Batch:"
             android:textColor="#44eeff"
             android:textSize="18sp"
             android:typeface="monospace" />
 
         <EditText
             android:id="@+id/editBatch"
-            android:layout_width="50dp"
+            android:layout_width="54dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="0.43"
             android:background="#ddffff"
             android:ems="10"
             android:hint="Batch"
@@ -150,20 +149,20 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="5dp"
-            android:text="Dept:"
+            android:text="*Dept:"
             android:textColor="#44eeff"
             android:textSize="18sp"
             android:typeface="monospace" />
 
         <EditText
             android:id="@+id/edtDept"
-            android:layout_width="110dp"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
             android:layout_weight="1"
             android:background="#ddffff"
             android:ems="10"
-            android:hint="Dept,Must"
+            android:hint="Dept"
             android:textColor="#ff9900" />
     </LinearLayout>
 
@@ -246,7 +245,7 @@
         android:layout_toRightOf="@+id/vname"
         android:background="#ddffff"
         android:ems="10"
-        android:hint="Name ,Must"
+        android:hint="My Name"
         android:textColor="#ff9900" />
 
 </RelativeLayout>
